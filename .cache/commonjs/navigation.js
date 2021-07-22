@@ -37,13 +37,9 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 function maybeRedirect(pathname) {
   const redirect = (0, _redirectUtils.maybeGetBrowserRedirect)(pathname);
-  const {
-    hash,
-    search
-  } = window.location;
 
   if (redirect != null) {
-    window.___replace(redirect.toPath + search + hash);
+    window.___replace(redirect.toPath);
 
     return true;
   } else {
@@ -86,22 +82,21 @@ const navigate = (to, options = {}) => {
     return;
   }
 
-  const {
-    pathname,
-    search,
-    hash
+  let {
+    pathname
   } = (0, _gatsbyLink.parsePath)(to);
   const redirect = (0, _redirectUtils.maybeGetBrowserRedirect)(pathname); // If we're redirecting, just replace the passed in pathname
   // to the one we want to redirect to.
 
   if (redirect) {
-    to = redirect.toPath + search + hash;
+    to = redirect.toPath;
+    pathname = (0, _gatsbyLink.parsePath)(to).pathname;
   } // If we had a service worker update, no matter the path, reload window and
   // reset the pathname whitelist
 
 
   if (window.___swUpdated) {
-    window.location = pathname + search + hash;
+    window.location = pathname;
     return;
   } // Start a timer to wait for a second before transitioning and showing a
   // loader in case resources aren't around yet.

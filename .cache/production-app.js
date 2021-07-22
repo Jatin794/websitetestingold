@@ -192,7 +192,7 @@ apiRunnerAsync(`onClientEntry`).then(() => {
     const renderer = apiRunner(
       `replaceHydrateFunction`,
       undefined,
-      ReactDOM.hydrateRoot ? ReactDOM.hydrateRoot : ReactDOM.hydrate
+      ReactDOM.createRoot ? ReactDOM.createRoot : ReactDOM.hydrate
     )[0]
 
     function runRender() {
@@ -201,8 +201,10 @@ apiRunnerAsync(`onClientEntry`).then(() => {
           ? document.getElementById(`___gatsby`)
           : null
 
-      if (renderer === ReactDOM.hydrateRoot) {
-        renderer(rootElement, <App />)
+      if (renderer === ReactDOM.createRoot) {
+        renderer(rootElement, {
+          hydrate: true,
+        }).render(<App />)
       } else {
         renderer(<App />, rootElement)
       }

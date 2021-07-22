@@ -11,10 +11,9 @@ import { parsePath } from "gatsby-link"
 
 function maybeRedirect(pathname) {
   const redirect = maybeGetBrowserRedirect(pathname)
-  const { hash, search } = window.location
 
   if (redirect != null) {
-    window.___replace(redirect.toPath + search + hash)
+    window.___replace(redirect.toPath)
     return true
   } else {
     return false
@@ -48,19 +47,20 @@ const navigate = (to, options = {}) => {
     return
   }
 
-  const { pathname, search, hash } = parsePath(to)
+  let { pathname } = parsePath(to)
   const redirect = maybeGetBrowserRedirect(pathname)
 
   // If we're redirecting, just replace the passed in pathname
   // to the one we want to redirect to.
   if (redirect) {
-    to = redirect.toPath + search + hash
+    to = redirect.toPath
+    pathname = parsePath(to).pathname
   }
 
   // If we had a service worker update, no matter the path, reload window and
   // reset the pathname whitelist
   if (window.___swUpdated) {
-    window.location = pathname + search + hash
+    window.location = pathname
     return
   }
 

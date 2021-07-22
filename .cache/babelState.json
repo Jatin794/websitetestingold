@@ -7,41 +7,21 @@
           "options": {}
         },
         {
-          "name": "@prefresh/babel-plugin",
-          "stage": "develop",
+          "name": "/home/jatin/Documents/Github/websitetesting/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
         {
-          "name": "babel-plugin-styled-components",
-          "stage": "develop",
-          "options": {
-            "plugins": [],
-            "displayName": true,
-            "fileName": true,
-            "minify": true,
-            "namespace": "",
-            "transpileTemplateLiterals": true,
-            "topLevelImportPaths": [],
-            "pure": false,
-            "ssr": false
-          }
-        },
-        {
-          "name": "/home/jatin/Documents/Github/demo/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
+          "name": "/home/jatin/Documents/Github/websitetesting/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
           "options": {}
         },
         {
-          "name": "/home/jatin/Documents/Github/demo/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
-          "options": {}
-        },
-        {
-          "name": "/home/jatin/Documents/Github/demo/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "name": "/home/jatin/Documents/Github/websitetesting/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
           "options": {}
         }
       ],
       "presets": [
         {
-          "name": "/home/jatin/Documents/Github/demo/node_modules/@babel/preset-typescript/lib/index.js",
+          "name": "/home/jatin/Documents/Github/websitetesting/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": [],
             "allExtensions": false,
@@ -62,36 +42,21 @@
           "options": {}
         },
         {
-          "name": "/home/jatin/Documents/Github/demo/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
+          "name": "/home/jatin/Documents/Github/websitetesting/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
         {
-          "name": "/home/jatin/Documents/Github/demo/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
+          "name": "/home/jatin/Documents/Github/websitetesting/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
           "options": {}
         },
         {
-          "name": "/home/jatin/Documents/Github/demo/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "name": "/home/jatin/Documents/Github/websitetesting/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
           "options": {}
-        },
-        {
-          "name": "babel-plugin-styled-components",
-          "stage": "develop-html",
-          "options": {
-            "plugins": [],
-            "displayName": true,
-            "fileName": true,
-            "minify": true,
-            "namespace": "",
-            "transpileTemplateLiterals": true,
-            "topLevelImportPaths": [],
-            "pure": false,
-            "ssr": false
-          }
         }
       ],
       "presets": [
         {
-          "name": "/home/jatin/Documents/Github/demo/node_modules/@babel/preset-typescript/lib/index.js",
+          "name": "/home/jatin/Documents/Github/websitetesting/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": [],
             "allExtensions": false,
@@ -112,36 +77,21 @@
           "options": {}
         },
         {
-          "name": "/home/jatin/Documents/Github/demo/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
+          "name": "/home/jatin/Documents/Github/websitetesting/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
         {
-          "name": "/home/jatin/Documents/Github/demo/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
+          "name": "/home/jatin/Documents/Github/websitetesting/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
           "options": {}
         },
         {
-          "name": "/home/jatin/Documents/Github/demo/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "name": "/home/jatin/Documents/Github/websitetesting/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
           "options": {}
-        },
-        {
-          "name": "babel-plugin-styled-components",
-          "stage": "build-html",
-          "options": {
-            "plugins": [],
-            "displayName": true,
-            "fileName": true,
-            "minify": true,
-            "namespace": "",
-            "transpileTemplateLiterals": true,
-            "topLevelImportPaths": [],
-            "pure": false,
-            "ssr": true
-          }
         }
       ],
       "presets": [
         {
-          "name": "/home/jatin/Documents/Github/demo/node_modules/@babel/preset-typescript/lib/index.js",
+          "name": "/home/jatin/Documents/Github/websitetesting/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": [],
             "allExtensions": false,
@@ -162,36 +112,21 @@
           "options": {}
         },
         {
-          "name": "/home/jatin/Documents/Github/demo/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
+          "name": "/home/jatin/Documents/Github/websitetesting/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
         {
-          "name": "/home/jatin/Documents/Github/demo/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
+          "name": "/home/jatin/Documents/Github/websitetesting/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
           "options": {}
         },
         {
-          "name": "/home/jatin/Documents/Github/demo/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "name": "/home/jatin/Documents/Github/websitetesting/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
           "options": {}
-        },
-        {
-          "name": "babel-plugin-styled-components",
-          "stage": "build-javascript",
-          "options": {
-            "plugins": [],
-            "displayName": true,
-            "fileName": true,
-            "minify": true,
-            "namespace": "",
-            "transpileTemplateLiterals": true,
-            "topLevelImportPaths": [],
-            "pure": false,
-            "ssr": true
-          }
         }
       ],
       "presets": [
         {
-          "name": "/home/jatin/Documents/Github/demo/node_modules/@babel/preset-typescript/lib/index.js",
+          "name": "/home/jatin/Documents/Github/websitetesting/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": [],
             "allExtensions": false,

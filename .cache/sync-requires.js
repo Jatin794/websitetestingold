@@ -4,10 +4,11 @@ const preferDefault = m => (m && m.default) || m
 
 
 exports.components = {
-  "component---node-modules-gatsby-theme-try-ghost-src-pages-404-js": preferDefault(require("/home/jatin/Documents/Github/demo/node_modules/gatsby-theme-try-ghost/src/pages/404.js")),
-  "component---node-modules-gatsby-theme-try-ghost-src-templates-author-js": preferDefault(require("/home/jatin/Documents/Github/demo/node_modules/gatsby-theme-try-ghost/src/templates/author.js")),
-  "component---node-modules-gatsby-theme-try-ghost-src-templates-index-js": preferDefault(require("/home/jatin/Documents/Github/demo/node_modules/gatsby-theme-try-ghost/src/templates/index.js")),
-  "component---node-modules-gatsby-theme-try-ghost-src-templates-post-js": preferDefault(require("/home/jatin/Documents/Github/demo/node_modules/gatsby-theme-try-ghost/src/templates/post.js")),
-  "component---node-modules-gatsby-theme-try-ghost-src-templates-tag-js": preferDefault(require("/home/jatin/Documents/Github/demo/node_modules/gatsby-theme-try-ghost/src/templates/tag.js"))
+  "component---cache-caches-gatsby-plugin-offline-app-shell-js": preferDefault(require("/home/jatin/Documents/Github/websitetesting/.cache/caches/gatsby-plugin-offline/app-shell.js")),
+  "component---src-pages-404-js": preferDefault(require("/home/jatin/Documents/Github/websitetesting/src/pages/404.js")),
+  "component---src-templates-author-js": preferDefault(require("/home/jatin/Documents/Github/websitetesting/src/templates/author.js")),
+  "component---src-templates-index-js": preferDefault(require("/home/jatin/Documents/Github/websitetesting/src/templates/index.js")),
+  "component---src-templates-post-js": preferDefault(require("/home/jatin/Documents/Github/websitetesting/src/templates/post.js")),
+  "component---src-templates-tag-js": preferDefault(require("/home/jatin/Documents/Github/websitetesting/src/templates/tag.js"))
 }
 
