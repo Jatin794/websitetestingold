@@ -15,8 +15,7 @@ module.exports = {
       description: 'disallow volatile computed properties',
       category: 'Computed Properties',
       recommended: true,
-      url:
-        'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-volatile-computed-properties.md',
+      url: 'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-volatile-computed-properties.md',
     },
     schema: [],
   },
@@ -44,7 +43,7 @@ module.exports = {
           types.isIdentifier(node.callee.property) &&
           node.callee.property.name === 'volatile'
         ) {
-          context.report(node.callee.property, ERROR_MESSAGE);
+          context.report({ node: node.callee.property, message: ERROR_MESSAGE });
         }
       },
     };

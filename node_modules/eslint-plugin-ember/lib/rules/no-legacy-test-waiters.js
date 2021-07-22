@@ -12,8 +12,7 @@ module.exports = {
       description: 'disallow the use of the legacy test waiter APIs',
       category: 'Testing',
       recommended: true,
-      url:
-        'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-legacy-test-waiters.md',
+      url: 'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-legacy-test-waiters.md',
     },
     fixable: null,
     schema: [],
@@ -40,7 +39,7 @@ module.exports = {
           node.callee.type === 'Identifier' &&
           testWaitersIdentifiers.includes(node.callee.name)
         ) {
-          context.report(node, ERROR_MESSAGE);
+          context.report({ node, message: ERROR_MESSAGE });
         }
       },
     };

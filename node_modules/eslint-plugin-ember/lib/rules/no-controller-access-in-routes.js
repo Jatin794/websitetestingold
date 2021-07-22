@@ -19,8 +19,7 @@ module.exports = {
         'disallow routes from accessing the controller outside of setupController/resetController',
       category: 'Routes',
       recommended: true,
-      url:
-        'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-controller-access-in-routes.md',
+      url: 'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-controller-access-in-routes.md',
     },
     fixable: null,
     schema: [
@@ -78,7 +77,7 @@ module.exports = {
           node.property.name === 'controller'
         ) {
           // Example: this.controller;
-          context.report(node, ERROR_MESSAGE);
+          context.report({ node, message: ERROR_MESSAGE });
         }
       },
 
@@ -100,7 +99,7 @@ module.exports = {
           node.callee.property.name === 'controllerFor'
         ) {
           // Example this.controllerFor(...);
-          context.report(node, ERROR_MESSAGE);
+          context.report({ node, message: ERROR_MESSAGE });
         }
 
         if (
@@ -113,7 +112,7 @@ module.exports = {
           node.arguments[0].value === 'controller'
         ) {
           // Example: this.get('controller');
-          context.report(node, ERROR_MESSAGE);
+          context.report({ node, message: ERROR_MESSAGE });
         }
 
         if (
@@ -125,7 +124,7 @@ module.exports = {
           node.arguments[1].value === 'controller'
         ) {
           // Example: get(this, 'controller');
-          context.report(node, ERROR_MESSAGE);
+          context.report({ node, message: ERROR_MESSAGE });
         }
 
         if (
@@ -136,7 +135,7 @@ module.exports = {
           getPropertiesArgumentsIncludeController(node.arguments)
         ) {
           // Example: this.getProperties('controller');
-          context.report(node, ERROR_MESSAGE);
+          context.report({ node, message: ERROR_MESSAGE });
         }
 
         if (
@@ -146,7 +145,7 @@ module.exports = {
           getPropertiesArgumentsIncludeController(node.arguments.slice(1))
         ) {
           // Example: getProperties(this, 'controller');
-          context.report(node, ERROR_MESSAGE);
+          context.report({ node, message: ERROR_MESSAGE });
         }
       },
 

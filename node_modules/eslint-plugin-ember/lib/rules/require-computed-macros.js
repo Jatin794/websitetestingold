@@ -129,8 +129,7 @@ module.exports = {
       description: 'require using computed property macros when possible',
       category: 'Computed Properties',
       recommended: true,
-      url:
-        'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/require-computed-macros.md',
+      url: 'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/require-computed-macros.md',
     },
     fixable: 'code',
     schema: [
@@ -305,16 +304,33 @@ module.exports = {
           types.isLiteral(statement.right) &&
           propertyGetterUtils.isSimpleThisExpression(statement.left)
         ) {
-          if (statement.operator === '===') {
-            reportBinaryExpression(nodeToReport, statement, 'equal');
-          } else if (statement.operator === '>') {
-            reportBinaryExpression(nodeToReport, statement, 'gt');
-          } else if (statement.operator === '>=') {
-            reportBinaryExpression(nodeToReport, statement, 'gte');
-          } else if (statement.operator === '<') {
-            reportBinaryExpression(nodeToReport, statement, 'lt');
-          } else if (statement.operator === '<=') {
-            reportBinaryExpression(nodeToReport, statement, 'lte');
+          switch (statement.operator) {
+            case '===': {
+              reportBinaryExpression(nodeToReport, statement, 'equal');
+
+              break;
+            }
+            case '>': {
+              reportBinaryExpression(nodeToReport, statement, 'gt');
+
+              break;
+            }
+            case '>=': {
+              reportBinaryExpression(nodeToReport, statement, 'gte');
+
+              break;
+            }
+            case '<': {
+              reportBinaryExpression(nodeToReport, statement, 'lt');
+
+              break;
+            }
+            case '<=': {
+              reportBinaryExpression(nodeToReport, statement, 'lte');
+
+              break;
+            }
+            // No default
           }
         } else if (propertyGetterUtils.isSimpleThisExpression(statement)) {
           reportSingleArg(nodeToReport, statement, 'reads');

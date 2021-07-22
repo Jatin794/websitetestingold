@@ -15,8 +15,7 @@ module.exports = {
       description: 'disallow the creation of new mixins',
       category: 'Deprecations',
       recommended: true,
-      url:
-        'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-new-mixins.md',
+      url: 'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-new-mixins.md',
     },
     fixable: null,
     schema: [],
@@ -28,13 +27,13 @@ module.exports = {
     return {
       CallExpression(node) {
         if (ember.isEmberMixin(context, node)) {
-          context.report(node, ERROR_MESSAGE);
+          context.report({ node, message: ERROR_MESSAGE });
         }
       },
 
       ClassDeclaration(node) {
         if (ember.isEmberMixin(context, node)) {
-          context.report(node, ERROR_MESSAGE);
+          context.report({ node, message: ERROR_MESSAGE });
         }
       },
     };

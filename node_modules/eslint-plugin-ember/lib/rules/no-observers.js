@@ -17,8 +17,7 @@ module.exports = {
       description: 'disallow usage of observers',
       category: 'Deprecations',
       recommended: true,
-      url:
-        'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-observers.md',
+      url: 'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-observers.md',
     },
     fixable: null,
     schema: [],
@@ -28,7 +27,7 @@ module.exports = {
 
   create(context) {
     const report = function (node) {
-      context.report(node, ERROR_MESSAGE);
+      context.report({ node, message: ERROR_MESSAGE });
     };
 
     let importedEmberName = undefined;
@@ -79,19 +78,33 @@ module.exports = {
       },
 
       ImportDeclaration(node) {
-        if (node.source.value === 'ember') {
-          importedEmberName = importedEmberName || getImportIdentifier(node, 'ember');
-        } else if (node.source.value === '@ember/object') {
-          importedObserverName =
-            importedObserverName || getImportIdentifier(node, '@ember/object', 'observer');
-        } else if (node.source.value === '@ember-decorators/object') {
-          importedObservesName =
-            importedObservesName ||
-            getImportIdentifier(node, '@ember-decorators/object', 'observes');
-        } else if (node.source.value === '@ember/object/observers') {
-          importedAddObserverName =
-            importedAddObserverName ||
-            getImportIdentifier(node, '@ember/object/observers', 'addObserver');
+        switch (node.source.value) {
+          case 'ember': {
+            importedEmberName = importedEmberName || getImportIdentifier(node, 'ember');
+
+            break;
+          }
+          case '@ember/object': {
+            importedObserverName =
+              importedObserverName || getImportIdentifier(node, '@ember/object', 'observer');
+
+            break;
+          }
+          case '@ember-decorators/object': {
+            importedObservesName =
+              importedObservesName ||
+              getImportIdentifier(node, '@ember-decorators/object', 'observes');
+
+            break;
+          }
+          case '@ember/object/observers': {
+            importedAddObserverName =
+              importedAddObserverName ||
+              getImportIdentifier(node, '@ember/object/observers', 'addObserver');
+
+            break;
+          }
+          // No default
         }
       },
     };

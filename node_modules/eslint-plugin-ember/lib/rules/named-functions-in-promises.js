@@ -13,8 +13,7 @@ module.exports = {
       description: 'enforce usage of named functions in promises',
       category: 'Miscellaneous',
       recommended: false,
-      url:
-        'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/named-functions-in-promises.md',
+      url: 'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/named-functions-in-promises.md',
     },
     fixable: null,
     schema: [
@@ -38,7 +37,7 @@ module.exports = {
     const message = 'Use named functions defined on objects to handle promises';
 
     const report = function (node) {
-      context.report(node, message);
+      context.report({ node, message });
     };
 
     return {

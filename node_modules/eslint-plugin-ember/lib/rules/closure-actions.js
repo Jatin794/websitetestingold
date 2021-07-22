@@ -15,8 +15,7 @@ module.exports = {
       description: 'enforce usage of closure actions',
       category: 'Deprecations',
       recommended: true,
-      url:
-        'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/closure-actions.md',
+      url: 'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/closure-actions.md',
     },
     fixable: null,
     schema: [],
@@ -26,7 +25,7 @@ module.exports = {
 
   create(context) {
     const report = function (node) {
-      context.report(node, ERROR_MESSAGE);
+      context.report({ node, message: ERROR_MESSAGE });
     };
 
     return {

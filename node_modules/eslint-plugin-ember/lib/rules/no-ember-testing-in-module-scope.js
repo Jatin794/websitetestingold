@@ -16,8 +16,7 @@ module.exports = {
       description: 'disallow use of `Ember.testing` in module scope',
       category: 'Testing',
       recommended: true,
-      url:
-        'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-ember-testing-in-module-scope.md',
+      url: 'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-ember-testing-in-module-scope.md',
     },
     fixable: null,
     schema: [],
@@ -46,14 +45,14 @@ module.exports = {
           node.parent.object.name === emberImportAliasName
         ) {
           if (context.getScope().variableScope.type === 'module') {
-            context.report(node.parent, ERROR_MESSAGES[0]);
+            context.report({ node: node.parent, message: ERROR_MESSAGES[0] });
           }
           const nodeGrandParent = utils.getPropertyValue(node, 'parent.parent.type');
           if (
             nodeGrandParent === 'AssignmentExpression' ||
             nodeGrandParent === 'VariableDeclarator'
           ) {
-            context.report(node.parent.parent, ERROR_MESSAGES[1]);
+            context.report({ node: node.parent.parent, message: ERROR_MESSAGES[1] });
           }
         }
       },
@@ -67,7 +66,7 @@ module.exports = {
               ancestorNode.init.name === emberImportAliasName
           )
         ) {
-          context.report(node.parent.parent.parent, ERROR_MESSAGES[2]);
+          context.report({ node: node.parent.parent.parent, message: ERROR_MESSAGES[2] });
         }
       },
     };

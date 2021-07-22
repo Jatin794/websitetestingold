@@ -20,8 +20,7 @@ module.exports = {
       description: 'disallow missing return statements in computed properties',
       category: 'Computed Properties',
       recommended: true,
-      url:
-        'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/require-return-from-computed.md',
+      url: 'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/require-return-from-computed.md',
     },
     fixable: null,
     schema: [],
@@ -31,7 +30,7 @@ module.exports = {
 
   create(context) {
     const report = function (node) {
-      context.report(node, ERROR_MESSAGE);
+      context.report({ node, message: ERROR_MESSAGE });
     };
 
     let funcInfo = {

@@ -15,8 +15,7 @@ module.exports = {
       description: 'disallow arrow functions in computed properties',
       category: 'Computed Properties',
       recommended: true,
-      url:
-        'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-arrow-function-computed-properties.md',
+      url: 'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-arrow-function-computed-properties.md',
     },
     schema: [
       {
@@ -72,10 +71,16 @@ module.exports = {
 
         if (onlyThisContexts) {
           if (isThisPresent) {
-            context.report(node.arguments[node.arguments.length - 1], ERROR_MESSAGE);
+            context.report({
+              node: node.arguments[node.arguments.length - 1],
+              message: ERROR_MESSAGE,
+            });
           }
         } else {
-          context.report(node.arguments[node.arguments.length - 1], ERROR_MESSAGE);
+          context.report({
+            node: node.arguments[node.arguments.length - 1],
+            message: ERROR_MESSAGE,
+          });
         }
       },
     };

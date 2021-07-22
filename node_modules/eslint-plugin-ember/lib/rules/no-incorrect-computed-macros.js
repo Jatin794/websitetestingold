@@ -12,8 +12,7 @@ module.exports = {
       description: 'disallow incorrect usage of computed property macros',
       category: 'Computed Properties',
       recommended: true,
-      url:
-        'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-incorrect-computed-macros.md',
+      url: 'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-incorrect-computed-macros.md',
     },
     fixable: 'code',
     schema: [],
@@ -67,7 +66,7 @@ module.exports = {
               },
             });
           } else if (node.arguments.length === 0) {
-            context.report(node, ERROR_MESSAGE_AND_OR);
+            context.report({ node, message: ERROR_MESSAGE_AND_OR });
           }
         }
       },

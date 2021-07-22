@@ -20,8 +20,7 @@ module.exports = {
       description: 'enforce the consistent use of getters in computed properties',
       category: 'Computed Properties',
       recommended: false,
-      url:
-        'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/computed-property-getters.md',
+      url: 'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/computed-property-getters.md',
     },
     fixable: null,
     schema: [
@@ -39,7 +38,7 @@ module.exports = {
     const requireGetters = context.options[0] || 'always-with-setter';
 
     const report = function (node, message) {
-      context.report(node, message);
+      context.report({ node, message });
     };
 
     const requireGetterOnlyWithASetterInComputedProperty = function (node) {

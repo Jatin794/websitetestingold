@@ -16,8 +16,7 @@ module.exports = {
       description: 'disallow usage of `this.attrs` in components',
       category: 'Components',
       recommended: true,
-      url:
-        'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-attrs-in-components.md',
+      url: 'https://github.com/ember-cli/eslint-plugin-ember/tree/master/docs/rules/no-attrs-in-components.md',
     },
     fixable: null,
     schema: [],
@@ -55,7 +54,7 @@ module.exports = {
 
       MemberExpression(node) {
         if (currentEmberComponent && isThisAttrsExpression(node)) {
-          context.report(node.property, ERROR_MESSAGE);
+          context.report({ node: node.property, message: ERROR_MESSAGE });
         }
       },
     };
